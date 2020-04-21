@@ -4,21 +4,44 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import cv2
-import tensorflow.keras.layers as l
-%matplotlib inline
 
-
-class DataGen:
-    def __init__(self,csv,dir_):
+class DataGen(tf.keras.utils.Sequence):
+    def __init__(self,csv,dir_,target_size,batch_size):
         self.csv = csv
         self.dir = dir_
+        self.batch_size = batch_size
+        self.target_size = target_size
         self.df = pd.read_csv(self.csv)
         
-        self.images = np.array(self.df.iloc[:,0]) 
+        self.images = np.array(self.df.iloc[:,0])
+        self.indexes = np.arange(0,self.images.shape[0]) 
         self.kps = np.array(self.df.iloc[:,1:])
         self.length = self.images.shape[0]
+        self.on_epoch_end()
+    
+    def __len__(self):
+        'Denotes the number of batches per epoch'
+        return int(np.floor(1362 / self.batch_size))
+
+    
+    def __getitem__(self, index):
+        'Generate one batch of data'
+        # Generate indexes of the batch
+        imgs = self.images[index*self.batch_size:(index+1)*self.batch_size]
+        kps = self.kps[index*self.batch_size:(index+1)*self.batch_size]
+
+       
+        # Generate data
+        X, y = self.__data_generation(imgs,kps)
+
+        return X, y
         
-    def rescale(self,sample,size):
+    def rescale(self,sample,crop=True):
+        #if size is None:
+        if crop ==True:    
+            size = self.target_size[0]+26,self.target_size[1]+26,
+        else:
+            size = self.target_size
         assert isinstance(size, (int, tuple))
         img = sample["img"]
         kps = sample["kps"]
@@ -37,8 +60,8 @@ class DataGen:
         
         return {"img": new_im,"kps":new_kps}
         
-    def random_crop(self,sample,size):
-        
+    def random_crop(self,sample):
+        size = self.target_size[0]
         image, key_pts = sample['img'], sample['kps']
 
         im_h, im_w = image.shape[:2]
@@ -74,36 +97,42 @@ class DataGen:
         return {'img': image_copy, 'kps': key_pts_copy}
         
         
+    def on_epoch_end(self):
+      pass
+        
+        
+    def __data_generation(self,imgs,kps):
+        
+        
+        batch_imgs=[]
+        batch_kps =[]
+        for i, ID in enumerate(imgs):
 
-        
-        
-    def generate(self):
-        
-        while True:
-            
-            idx = np.random.randint(self.length)
-            
-            img_name = self.images[idx]
-            img = cv2.imread(self.dir+img_name)
-            
-            prob =0.5
+          prob =0.5
             # rescaling
             
-            
-            key_points = self.kps[idx]
-            key_points = key_points.astype('float').reshape(-1, 2)
-            sample = {"img": img, "kps": key_points}
+          img = cv2.imread(self.dir+ID)
+          key_points = kps[i]
+          key_points = key_points.astype('float').reshape(-1, 2)
+          sample = {"img": img, "kps": key_points}
            
             
-            if(prob<np.random.rand()):
+          if(prob<np.random.rand()):
                 
-                sample = self.rescale(sample,(250,250))
-                sample = self.random_crop(sample,224)
-            else:
-                 sample = self.rescale(sample,(96,96))
-            sample = self.normalize(sample)
+                    
+            sample = self.rescale(sample,crop=True)
+            sample = self.random_crop(sample)
+                    
+          else:
+
+            sample = self.rescale(sample,crop=False)
+          sample = self.normalize(sample)
+          batch_imgs.append(np.expand_dims(sample["img"],axis=2))
+          batch_kps.append(sample["kps"].reshape(136,))
+        batch_imgs = np.array(batch_imgs)
+        batch_kps = np.array(batch_kps)
             
             
             
-            yield sample
+        return batch_imgs,batch_kps
         
