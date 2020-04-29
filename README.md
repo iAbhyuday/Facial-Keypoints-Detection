@@ -28,3 +28,7 @@ Augmentations used : Random Crop and 5 degrees clockwise, anticlockwise rotation
 |<img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/test_images/elon.jpg">  |  <img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/results/elon.jpg">|
 |<img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/test_images/leo.jpg">|<img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/results/leo.jpg">|
 |<img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/test_images/oscars.jpg">|<img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/results/oscars.jpg">|
+
+
+
+##### Readme and repo will be updated with more details soon ....
