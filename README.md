@@ -23,7 +23,7 @@ Augmentations used : Random Crop and 5 degrees clockwise, anticlockwise rotation
 ### Results 
 | | | 
 |:----------------------:|:---------------------:|
-|<img height= "200" width="200" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/test_images/Robert.jpg"> |  <img height= "200" width="200" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/results/robert.jpg">|
+|<img width="300" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/test_images/Robert.jpg"> |  <img width="300" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/results/robert.jpg">|
 |<img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/test_images/michael%20jackson.jpg">  |  <img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/results/mj.jpg">|
 |<img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/test_images/elon.jpg">  |  <img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/results/elon.jpg">|
 |<img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/test_images/leo.jpg">|<img width="400" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/iAbhyuday/Facial-Keypoints-Detection/raw/master/results/leo.jpg">|
