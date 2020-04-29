@@ -1,4 +1,4 @@
-<div align="center"><img src="https://idroot.us/wp-content/uploads/2019/03/TensorFlow-logo.png" height= "100px" width="175px"></div>
+<div align="center"><img src="https://idroot.us/wp-content/uploads/2019/03/TensorFlow-logo.png" height= "80px" width="155px"></div>
 <div align="center"><h3>Facial Keypoints Detection</h3></div>
 
 
