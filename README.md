@@ -8,7 +8,10 @@
 This project uses LeNet inspired CNN architecture to detect 68 facial keypoints in an image. Facial keypoints include points around eyes, noses, eyebrows, mouth and facial border. 
 Facial Keypoints have applications in face morphing, emotion recognition, face-tracking, face-pose recognition, facial filters and many more... 
 
-#### Made with    
+#### Requirements
+>* Tensorflow
+>* OpenCV
+>* skimage
 
 
 ### Dataset
