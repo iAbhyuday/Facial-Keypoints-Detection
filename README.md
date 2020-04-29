@@ -1,4 +1,4 @@
-<div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/1200px-Tensorflow_logo.svg.png" height= "30px" width="30px"></div>
+<div align="center"><img src="https://idroot.us/wp-content/uploads/2019/03/TensorFlow-logo.png" height= "100px" width="175px"></div>
 <div align="center"><h3>Facial Keypoints Detection</h3></div>
 
 
